@@ -23,7 +23,6 @@ class List<T> {
 const numberList = new List([1, 2, 3]);
 numberList.pop();
 numberList.push(4);
-numberList.pop();
 numberList.print();
 
 const stringList = new List(["1", "2"]);
