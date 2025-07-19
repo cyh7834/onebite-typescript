@@ -1,11 +1,13 @@
-import { useEffect, useRef, useState } from 'react';
+import { useContext, useEffect, useRef, useState } from 'react';
+import { TodoDispatchContext, useTodoDispatch } from '../App';
 
 
 interface Props {
-  onClickAdd: (text: string) => void;
+  
 }
 
 export default function Editor(props: Props) {
+    const dispatch = useTodoDispatch();
     // useState는 제네릭 함수. string 타입을 사용
       const [text, setText] = useState('');
     
@@ -14,7 +16,7 @@ export default function Editor(props: Props) {
     };
 
     const onClickButton = () => {
-        props.onClickAdd(text);
+        dispatch.onClickAdd(text);
         setText("");
     };
 
